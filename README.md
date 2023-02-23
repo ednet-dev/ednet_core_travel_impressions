@@ -1,6 +1,6 @@
 # travel_impressions 
 
-**Categories**: dartling, education, class models, model design.
+**Categories**: EDNetCore, education, class models, model design.
 
 ## Description 
 travel_impressions project uses [EDNetCore] 
