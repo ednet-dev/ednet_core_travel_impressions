@@ -3,8 +3,8 @@
 **Categories**: dartling, education, class models, model design.
 
 ## Description 
-travel_impressions project uses [dartling] 
-(https://github.com/dzenanr/dartling) for the model.
+travel_impressions project uses [EDNetCore] 
+(https://github.com/ednet-dev/ednet_core) for the model.
 
 A web application that will allow young travelers to inform their families and 
 friends about their impressions of visited places.

@@ -1,5 +1,5 @@
 Project Path 
-used in code generation in dartling_gen
+used in code generation in ednet_core_gen
 
 Linux
 --genall /home/dr/git/web_ui/travel_impressions travel impressions

@@ -8,10 +8,10 @@ import "package:travel_impressions/travel_impressions.dart";
 genCode() { 
   var repo = new Repository(); 
  
-  // change "Dartling" to "YourDomainName" 
+  // change "EDNetCore" to "YourDomainName" 
   var travelDomain = new Domain("Travel"); 
  
-  // change dartling to yourDomainName 
+  // change ednet_core to yourDomainName 
   // change Skeleton to YourModelName 
   // change "Skeleton" to "YourModelName" 
   fromJsonToModel(travelImpressionsModelJson, travelDomain, "Impressions"); 
