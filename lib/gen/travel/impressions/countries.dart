@@ -2,7 +2,7 @@ part of travel_impressions;
  
 // lib/gen/travel/impressions/countries.dart 
  
-abstract class CountryGen extends ConceptEntity<Country> { 
+abstract class CountryGen extends Entity<Country> { 
  
   CountryGen(Concept concept) { 
     this.concept = concept;

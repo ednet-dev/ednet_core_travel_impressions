@@ -2,7 +2,7 @@ part of travel_impressions;
  
 // lib/gen/travel/impressions/messages.dart 
  
-abstract class MessageGen extends ConceptEntity<Message> { 
+abstract class MessageGen extends Entity<Message> { 
  
   MessageGen(Concept concept) { 
     this.concept = concept;

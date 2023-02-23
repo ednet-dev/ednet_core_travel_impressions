@@ -2,7 +2,7 @@ part of travel_impressions;
  
 // lib/gen/travel/impressions/impressions.dart 
  
-abstract class ImpressionGen extends ConceptEntity<Impression> { 
+abstract class ImpressionGen extends Entity<Impression> { 
  
   ImpressionGen(Concept concept) {
     this.concept = concept;

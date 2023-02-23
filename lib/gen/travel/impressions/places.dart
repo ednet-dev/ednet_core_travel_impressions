@@ -2,7 +2,7 @@ part of travel_impressions;
  
 // lib/gen/travel/impressions/places.dart 
  
-abstract class PlaceGen extends ConceptEntity<Place> { 
+abstract class PlaceGen extends Entity<Place> { 
  
   PlaceGen(Concept concept) { 
     this.concept = concept;
