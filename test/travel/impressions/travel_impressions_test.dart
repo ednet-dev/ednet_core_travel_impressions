@@ -2,7 +2,7 @@
 // test/travel/impressions/travel_impressions_test.dart
 
 import "package:test/test.dart";
-import "package:dartling/dartling.dart";
+import "package:ednet_core/ednet_core.dart";
 import "package:travel_impressions/travel_impressions.dart";
 
 class PlaceReaction implements ActionReactionApi {

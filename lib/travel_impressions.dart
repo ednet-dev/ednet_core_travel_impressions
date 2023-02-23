@@ -36,7 +36,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
 library travel_impressions; 
  
-import "package:dartling/dartling.dart"; 
+import "package:ednet_core/ednet_core.dart"; 
  
 part "travel/impressions/json/data.dart"; 
 part "travel/impressions/json/model.dart"; 

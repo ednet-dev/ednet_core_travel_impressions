@@ -3,7 +3,7 @@
 
 import "dart:html";
 
-import "package:dartling/dartling.dart";
+import "package:ednet_core/ednet_core.dart";
 import "package:dartling_default_app/dartling_default_app.dart";
 
 import "package:travel_impressions/travel_impressions.dart";
