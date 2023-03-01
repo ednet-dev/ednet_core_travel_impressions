@@ -2,8 +2,9 @@ name: travel_impressions
 version: 0.0.1
 
 description: travel_impressions application that uses EDNetCore for its model.
-homepage: http://ondart.me/
-documentation: http://goo.gl/qE0xTa
+
+homepage: https://ednet.dev
+
 
 environment:
   sdk: '>=2.18.6 <3.0.0'
