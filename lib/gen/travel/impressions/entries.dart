@@ -1,6 +1,6 @@
 part of travel_impressions; 
  
-// lib/gen/travel/impressions/entries.dart 
+// lib/gen/travel/impressions/model_entries.dart
  
 class ImpressionsEntries extends ModelEntries { 
  
@@ -16,7 +16,7 @@ class ImpressionsEntries extends ModelEntries {
     return entries; 
   } 
  
-  Entities newEntities(String conceptCode) { 
+  Entities? newEntities(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
       throw new ConceptError("${conceptCode} concept does not exist.") ; 
@@ -44,7 +44,7 @@ class ImpressionsEntries extends ModelEntries {
     } 
   } 
  
-  Entity newEntity(String conceptCode) { 
+  Entity? newEntity(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
       throw new ConceptError("${conceptCode} concept does not exist.") ; 
