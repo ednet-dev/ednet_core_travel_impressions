@@ -2,7 +2,7 @@ part of travel_impressions;
  
 // lib/gen/travel/repository.dart 
  
-class TravelRepo extends Repository { 
+class TravelRepo extends CoreRepository { 
  
   static final travelDomainCode = "Travel"; 
   static final travelImpressionsModelCode = "Impressions"; 

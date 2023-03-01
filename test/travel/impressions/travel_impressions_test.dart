@@ -18,7 +18,7 @@ class PlaceReaction implements ActionReactionApi {
   }
 }
 
-testTravelImpressions(Repository repo, String domainCode, String modelCode) {
+testTravelImpressions(CoreRepository repo, String domainCode, String modelCode) {
   var models;
   var session;
   var entries;

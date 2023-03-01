@@ -42,7 +42,7 @@ Next steps:
   git status
   git add .
   git commit -m 'initial version'
-  git remote add origin https://github.com/dzenanr/travel_impressions.git
+  git remote add origin https://github.com/ednet-dev/travel_impressions.git
   git push -u origin master
 
 -------------------------------------------------------------------------------
@@ -52,14 +52,14 @@ Git with Git Bash
 Clone a remote repository into a local repository.
 
 cd git/dart
-git clone https://github.com/dzenanr/travel_impressions.git
+git clone https://github.com/ednet-dev/travel_impressions.git
 cd travel_impressions
 
 Read+Write:
-https://github.com/dzenanr/travel_impressions.git
+https://github.com/ednet-dev/travel_impressions.git
 
 Read only:
-git://github.com/dzenanr/travel_impressions.git
+git://github.com/ednet-dev/travel_impressions.git
 
 Get the latest changes from the remote repository
 

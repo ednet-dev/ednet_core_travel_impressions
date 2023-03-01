@@ -1,6 +1,6 @@
 part of travel_impressions; 
  
-// lib/gen/travel/models.dart 
+// lib/gen/travel/i_domain_models.dart
  
 class TravelModels extends DomainModels { 
  

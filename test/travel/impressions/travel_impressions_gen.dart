@@ -6,7 +6,7 @@ import "package:ednet_core/ednet_core.dart";
 import "package:travel_impressions/travel_impressions.dart"; 
  
 genCode() { 
-  var repo = new Repository(); 
+  var repo = new CoreRepository(); 
  
   // change "EDNetCore" to "YourDomainName" 
   var travelDomain = new Domain("Travel"); 
