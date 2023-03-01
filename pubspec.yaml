@@ -12,4 +12,4 @@ dependencies:
   ednet_core:
     path: ../../../ednet_cms/packages/ednet_core
   ednet_core_default_app:
-    path: ../ednet_ednet_core_default_app
+    path: ../ednet_core_default_app
