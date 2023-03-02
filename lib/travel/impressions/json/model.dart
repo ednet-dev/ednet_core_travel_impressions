@@ -235,7 +235,7 @@ var travelImpressionsModelJson = r'''
                     "init":"now",
                     "essential":true,
                     "sensitive":false,
-                    "category":"identifier",
+                    "category":"attribute",
                     "type":"DateTime"
                 },
                 {

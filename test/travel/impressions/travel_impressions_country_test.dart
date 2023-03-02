@@ -179,7 +179,7 @@ void testTravelImpressionsCountries(
       var randomCountry = countries.random(); 
       var beforeUpdate = randomCountry.name; 
       try { 
-        randomCountry.name = 'phone'; 
+        randomCountry.name = 'right'; 
       } on UpdateException catch (e) { 
         expect(randomCountry.name, equals(beforeUpdate)); 
       } 
@@ -188,7 +188,7 @@ void testTravelImpressionsCountries(
     test("Update country id without try", () { 
       var randomCountry = countries.random(); 
       var beforeUpdateValue = randomCountry.name; 
-      expect(() => randomCountry.name = 'season', throws); 
+      expect(() => randomCountry.name = 'letter', throws); 
       expect(randomCountry.name, equals(beforeUpdateValue)); 
     }); 
  
@@ -198,15 +198,15 @@ void testTravelImpressionsCountries(
       var attribute = randomCountry.concept.attributes.singleWhereCode("name"); 
       expect(attribute?.update, isFalse); 
       attribute?.update = true; 
-      afterUpdateEntity.name = 'coffee'; 
-      expect(afterUpdateEntity.name, equals('coffee')); 
+      afterUpdateEntity.name = 'ticket'; 
+      expect(afterUpdateEntity.name, equals('ticket')); 
       attribute?.update = false; 
       var updated = countries.update(randomCountry, afterUpdateEntity); 
       expect(updated, isTrue); 
  
-      var entity = countries.singleWhereAttributeId("name", 'coffee'); 
+      var entity = countries.singleWhereAttributeId("name", 'ticket'); 
       expect(entity, isNotNull); 
-      expect(entity!.name, equals('coffee')); 
+      expect(entity!.name, equals('ticket')); 
  
       //countries.display("After update country id"); 
     }); 
@@ -245,7 +245,7 @@ void testTravelImpressionsCountries(
     test("country action undo and redo", () { 
       var countryCount = countries.length; 
       var country = Country(countries.concept); 
-        country.name = 'mind'; 
+        country.name = 'web'; 
       countries.add(country); 
       expect(countries.length, equals(++countryCount)); 
       countries.remove(country); 
@@ -265,7 +265,7 @@ void testTravelImpressionsCountries(
     test("country session undo and redo", () { 
       var countryCount = countries.length; 
       var country = Country(countries.concept); 
-        country.name = 'selfie'; 
+        country.name = 'hell'; 
       countries.add(country); 
       expect(countries.length, equals(++countryCount)); 
       countries.remove(country); 
@@ -377,7 +377,7 @@ void testTravelImpressionsCountries(
  
       travelDomain.startCommandReaction(reaction); 
       var country = Country(countries.concept); 
-        country.name = 'email'; 
+        country.name = 'auto'; 
       countries.add(country); 
       expect(countries.length, equals(++countryCount)); 
       countries.remove(country); 
