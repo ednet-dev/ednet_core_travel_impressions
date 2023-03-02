@@ -167,8 +167,8 @@ testTravelImpressions(CoreRepository repo, String domainCode, String modelCode) 
       Places places = bosnia.places.order();
       expect(places.isEmpty, isFalse);
       expect(places.length, equals(bosnia.places.length));
-      expect(places.source.isEmpty, isFalse);
-      expect(places.source.length, equals(places.length));
+      expect(places.source?.isEmpty, isFalse);
+      expect(places.source?.length, equals(places.length));
       //places.display(title:'Order places by id in Bosnia and Herzegovina');
     });
     test('Random place', () {
@@ -196,13 +196,13 @@ testTravelImpressions(CoreRepository repo, String domainCode, String modelCode) 
       expect(added, isFalse);
       expect(places.length, equals(placesCount));
 
-      places.errors.display(title:'Add place required error');
-      expect(places.errors.length, equals(2));
-      expect(places.errors.toList()[0].category, equals('required'));
-      expect(places.errors.toList()[0].message,
+      places.exceptions..display(title:'Add place required error');
+      expect(places.exceptions..length, equals(2));
+      expect(places.exceptions..toList()[0].category, equals('required'));
+      expect(places.exceptions..toList()[0].message,
           equals('Place.name attribute is null.'));
-      expect(places.errors.toList()[1].category, equals('required'));
-      expect(places.errors.toList()[1].message,
+      expect(places.exceptions..toList()[1].category, equals('required'));
+      expect(places.exceptions..toList()[1].message,
           equals('Place.country parent is null.'));
     });
     test('Add place unique error', () {
@@ -216,9 +216,9 @@ testTravelImpressions(CoreRepository repo, String domainCode, String modelCode) 
       expect(added, isFalse);
       expect(places.length, equals(placesCount));
 
-      places.errors.display(title:'Add place unique error');
-      expect(places.errors.length, equals(1));
-      expect(places.errors.toList()[0].category, equals('unique'));
+      places.exceptions..display(title:'Add place unique error');
+      expect(places.exceptions..length, equals(1));
+      expect(places.exceptions..toList()[0].category, equals('unique'));
     });
     test('Add place pre validation error', () {
       Places places = bosnia.places;
@@ -232,9 +232,9 @@ testTravelImpressions(CoreRepository repo, String domainCode, String modelCode) 
       expect(added, isFalse);
       expect(places.length, equals(placesCount));
 
-      places.errors.display(title:'Add place pre validation error');
-      expect(places.errors.length, equals(1));
-      expect(places.errors.toList()[0].category, equals('pre'));
+      places.exceptions..display(title:'Add place pre validation error');
+      expect(places.exceptions..length, equals(1));
+      expect(places.exceptions..toList()[0].category, equals('pre'));
     });
     test('Add place', () {
       Places places = bosnia.places;
@@ -254,7 +254,7 @@ testTravelImpressions(CoreRepository repo, String domainCode, String modelCode) 
       for (var place in oldPlaces) {
         expect(place.description, contains('old'));
       }
-      expect(oldPlaces.source.isEmpty, isFalse);
+      expect(oldPlaces.source?.isEmpty, isFalse);
       var countryPlacesCount = bosnia.places.length;
 
       var oldPlacesCount = oldPlaces.length;
@@ -275,7 +275,7 @@ testTravelImpressions(CoreRepository repo, String domainCode, String modelCode) 
       for (var place in oldPlaces) {
         expect(place.description, contains('old'));
       }
-      expect(oldPlaces.source.isEmpty, isFalse);
+      expect(oldPlaces.source?.isEmpty, isFalse);
       var countryPlacesCount = bosnia.places.length;
 
       var oldPlacesCount = oldPlaces.length;
@@ -294,7 +294,7 @@ testTravelImpressions(CoreRepository repo, String domainCode, String modelCode) 
       for (var place in oldPlaces) {
         expect(place.description, contains('old'));
       }
-      expect(oldPlaces.source.isEmpty, isFalse);
+      expect(oldPlaces.source?.isEmpty, isFalse);
       var countryPlacesCount = bosnia.places.length;
 
       var oldPlacesCount = oldPlaces.length;
@@ -323,7 +323,7 @@ testTravelImpressions(CoreRepository repo, String domainCode, String modelCode) 
       var beforeNameUpdate = place.name;
       try {
         place.name = 'Ilidza town';
-      } on UpdateError catch (e) {
+      } on UpdateException catch (e) {
         expect(place.name, equals(beforeNameUpdate));
       }
     });
