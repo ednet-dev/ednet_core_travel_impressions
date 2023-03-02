@@ -6,14 +6,19 @@ class Following extends FollowingGen {
  
   Following(Concept concept) : super(concept); 
  
-  Following.withId(Concept concept, Traveler follows, Traveler followedBy) : 
-    super.withId(concept, follows, followedBy); 
+  // added after code gen - begin 
+ 
+  // added after code gen - end 
  
 } 
  
 class Followings extends FollowingsGen { 
  
   Followings(Concept concept) : super(concept); 
+ 
+  // added after code gen - begin 
+ 
+  // added after code gen - end 
  
 } 
  

@@ -5,50 +5,42 @@ part of travel_impressions;
 abstract class MessageGen extends Entity<Message> { 
  
   MessageGen(Concept concept) { 
-    this.concept = concept;
-    Concept impressionConcept = concept.model.concepts.singleWhereCode("Impression"); 
-    setChild("impressions", new Impressions(impressionConcept)); 
+    this.concept = concept; 
+    Concept? impressionConcept = concept.model.concepts.singleWhereCode("Impression"); 
+    assert(impressionConcept!= null); 
+    setChild("impressions", Impressions(impressionConcept!)); 
   } 
  
-  MessageGen.withId(Concept concept, Traveler traveler, DateTime date) { 
-    this.concept = concept;
-    setParent("traveler", traveler); 
-    setAttribute("date", date); 
-    Concept impressionConcept = concept.model.concepts.singleWhereCode("Impression"); 
-    setChild("impressions", new Impressions(impressionConcept)); 
-  } 
- 
-  Traveler get traveler => getParent("traveler"); 
-  set traveler(Traveler p) => setParent("traveler", p); 
+  Reference get travelerReference => getReference("traveler") as Reference; 
+  void set travelerReference(Reference reference) { setReference("traveler", reference); } 
+  
+  Traveler get traveler => getParent("traveler") as Traveler; 
+  void set traveler(Traveler p) { setParent("traveler", p); } 
   
   DateTime get date => getAttribute("date"); 
-  set date(DateTime a) => setAttribute("date", a); 
+  void set date(DateTime a) { setAttribute("date", a); } 
   
   String get subject => getAttribute("subject"); 
-  set subject(String a) => setAttribute("subject", a); 
+  void set subject(String a) { setAttribute("subject", a); } 
   
   String get text => getAttribute("text"); 
-  set text(String a) => setAttribute("text", a); 
+  void set text(String a) { setAttribute("text", a); } 
   
-  Impressions get impressions => getChild("impressions"); 
+  Impressions get impressions => getChild("impressions") as Impressions; 
   
-  Message newEntity() => new Message(concept); 
-  Messages newEntities() => new Messages(concept); 
+  Message newEntity() => Message(concept); 
+  Messages newEntities() => Messages(concept); 
   
-  int dateCompareTo(Message other) { 
-    return date.compareTo(other.date); 
-  } 
- 
 } 
  
 abstract class MessagesGen extends Entities<Message> { 
  
-  MessagesGen(Concept concept) {
-    this.concept = concept;
-  }
+  MessagesGen(Concept concept) { 
+    this.concept = concept; 
+  } 
  
-  Messages newEntities() => new Messages(concept); 
-  Message newEntity() => new Message(concept); 
+  Messages newEntities() => Messages(concept); 
+  Message newEntity() => Message(concept); 
   
 } 
  

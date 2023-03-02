@@ -1,33 +1,29 @@
+ 
+// web/travel/impressions/travel_impressions_web.dart 
+ 
 
-// web/travel/impressions/travel_impressions_web.dart
-
-import "dart:html";
-
-import "package:ednet_core/ednet_core.dart";
-import "package:ednet_core_default_app/ednet_core_default_app.dart";
-
-import "package:travel_impressions/travel_impressions.dart";
-
-initTravelData(TravelRepo travelRepo) {
-   var travelModels =
-       travelRepo.getDomainModels(TravelRepo.travelDomainCode);
-
-   var travelImpressionsEntries =
-       travelModels.getModelEntries(TravelRepo.travelImpressionsModelCode);
-   initTravelImpressions(travelImpressionsEntries);
-   //travelImpressionsEntries.display();
-   //travelImpressionsEntries.displayJson();
-}
-
-showTravelData(TravelRepo travelRepo) {
-   var mainView = new View(document, "main");
-   mainView.repo = travelRepo;
-   new RepoMainSection(mainView);
-}
-
-void main() {
-  var travelRepo = new TravelRepo();
-  initTravelData(travelRepo);
-  showTravelData(travelRepo);
-}
-
+import "package:ednet_core/ednet_core.dart"; 
+ 
+import "package:ednet_core_default_app/ednet_core_default_app.dart"; 
+import "package:travel_impressions/travel_impressions.dart"; 
+ 
+void initData(CoreRepository repository) { 
+   TravelDomain? travelDomain = repository.getDomainModels("Travel") as TravelDomain?; 
+   ImpressionsModel? impressionsModel = travelDomain?.getModelEntries("Impressions") as ImpressionsModel?; 
+   impressionsModel?.init(); 
+   impressionsModel?.display(); 
+} 
+ 
+void showData(CoreRepository repository) { 
+   // var mainView = View(document, "main"); 
+   // mainView.repo = repository; 
+   // new RepoMainSection(mainView); 
+   print("not implemented"); 
+} 
+ 
+void main() { 
+  var repository = CoreRepository(); 
+  initData(repository); 
+  showData(repository); 
+} 
+ 

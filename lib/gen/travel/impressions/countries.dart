@@ -5,40 +5,30 @@ part of travel_impressions;
 abstract class CountryGen extends Entity<Country> { 
  
   CountryGen(Concept concept) { 
-    this.concept = concept;
-    Concept placeConcept = concept.model.concepts.singleWhereCode("Place"); 
-    setChild("places", new Places(placeConcept)); 
-  } 
- 
-  CountryGen.withId(Concept concept, String name) { 
-    this.concept = concept;
-    setAttribute("name", name); 
-    Concept placeConcept = concept.model.concepts.singleWhereCode("Place"); 
-    setChild("places", new Places(placeConcept)); 
+    this.concept = concept; 
+    Concept? placeConcept = concept.model.concepts.singleWhereCode("Place"); 
+    assert(placeConcept!= null); 
+    setChild("places", Places(placeConcept!)); 
   } 
  
   String get name => getAttribute("name"); 
-  set name(String a) => setAttribute("name", a); 
+  void set name(String a) { setAttribute("name", a); } 
   
-  Places get places => getChild("places"); 
+  Places get places => getChild("places") as Places; 
   
-  Country newEntity() => new Country(concept); 
-  Countries newEntities() => new Countries(concept); 
+  Country newEntity() => Country(concept); 
+  Countries newEntities() => Countries(concept); 
   
-  int nameCompareTo(Country other) { 
-    return name.compareTo(other.name); 
-  } 
- 
 } 
  
 abstract class CountriesGen extends Entities<Country> { 
  
-  CountriesGen(Concept concept) {
-    this.concept = concept;
-  }
+  CountriesGen(Concept concept) { 
+    this.concept = concept; 
+  } 
  
-  Countries newEntities() => new Countries(concept); 
-  Country newEntity() => new Country(concept); 
+  Countries newEntities() => Countries(concept); 
+  Country newEntity() => Country(concept); 
   
 } 
  

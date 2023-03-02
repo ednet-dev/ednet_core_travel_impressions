@@ -1,41 +1,22 @@
  
 // test/travel/impressions/travel_impressions_gen.dart 
- 
 import "package:ednet_core/ednet_core.dart"; 
- 
 import "package:travel_impressions/travel_impressions.dart"; 
  
-genCode() { 
-  var repo = new CoreRepository(); 
- 
-  // change "EDNetCore" to "YourDomainName" 
-  var travelDomain = new Domain("Travel"); 
- 
-  // change ednet_core to yourDomainName 
-  // change Skeleton to YourModelName 
-  // change "Skeleton" to "YourModelName" 
-  fromJsonToModel(travelImpressionsModelJson, travelDomain, "Impressions"); 
- 
-  repo.domains.add(travelDomain); 
- 
-  repo.gen("travel_impressions"); 
+void genCode(CoreRepository repository) { 
+  repository.gen("travel_impressions"); 
 } 
  
-initTravelData(TravelRepo travelRepo) { 
-   var travelModels = 
-       travelRepo.getDomainModels(TravelRepo.travelDomainCode); 
- 
-   var travelImpressionsEntries = 
-       travelModels.getModelEntries(TravelRepo.travelImpressionsModelCode); 
-   initTravelImpressions(travelImpressionsEntries); 
-   travelImpressionsEntries.display(); 
-   travelImpressionsEntries.displayJson(); 
+void initData(CoreRepository repository) { 
+   var travelDomain = repository.getDomainModels("Travel"); 
+   ImpressionsModel? impressionsModel = travelDomain?.getModelEntries("Impressions") as ImpressionsModel?; 
+   impressionsModel?.init(); 
+   //impressionsModel.display(); 
 } 
  
 void main() { 
-  genCode(); 
- 
-  var travelRepo = new TravelRepo(); 
-  initTravelData(travelRepo); 
+  var repository = CoreRepository(); 
+  genCode(repository); 
+  //initData(repository); 
 } 
  

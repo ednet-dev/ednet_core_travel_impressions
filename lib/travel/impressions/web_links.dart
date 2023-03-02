@@ -6,14 +6,19 @@ class WebLink extends WebLinkGen {
  
   WebLink(Concept concept) : super(concept); 
  
-  WebLink.withId(Concept concept, Uri url) : 
-    super.withId(concept, url); 
+  // added after code gen - begin 
+ 
+  // added after code gen - end 
  
 } 
  
 class WebLinks extends WebLinksGen { 
  
   WebLinks(Concept concept) : super(concept); 
+ 
+  // added after code gen - begin 
+ 
+  // added after code gen - end 
  
 } 
  

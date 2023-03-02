@@ -6,14 +6,19 @@ class Impression extends ImpressionGen {
  
   Impression(Concept concept) : super(concept); 
  
-  Impression.withId(Concept concept, Place place, Message message) : 
-    super.withId(concept, place, message); 
+  // added after code gen - begin 
+ 
+  // added after code gen - end 
  
 } 
  
 class Impressions extends ImpressionsGen { 
  
   Impressions(Concept concept) : super(concept); 
+ 
+  // added after code gen - begin 
+ 
+  // added after code gen - end 
  
 } 
  

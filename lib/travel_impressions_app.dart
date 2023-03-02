@@ -1,5 +1,5 @@
-    // lib/travel_impressions.dart
-    /*
+  // lib/travel_impressions_app.dart
+  /*
 http://opensource.org/licenses/
 
 http://en.wikipedia.org/wiki/BSD_license
@@ -32,58 +32,15 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 
-    library travel_impressions;
+  library travel_impressions_app;
 
-    import "package:ednet_core/ednet_core.dart";
-
-    part "repository.dart";
-    part "gen/travel/i_domain_models.dart";
-    part "gen/travel/impressions/model_entries.dart";
-    part "travel/domain.dart";
-    part "travel/impressions/model.dart";
-    part "travel/impressions/json/data.dart";
-    part "travel/impressions/json/model.dart";
-    
-part "travel/impressions/travelers.dart";
-
-
-part "travel/impressions/places.dart";
-
-
-part "travel/impressions/impressions.dart";
-
-
-part "travel/impressions/messages.dart";
-
-
-part "travel/impressions/countries.dart";
-
-
-part "travel/impressions/web_links.dart";
-
-
-part "travel/impressions/followings.dart";
-
-    
-part "gen/travel/impressions/travelers.dart";
-
-
-part "gen/travel/impressions/places.dart";
-
-
-part "gen/travel/impressions/impressions.dart";
-
-
-part "gen/travel/impressions/messages.dart";
-
-
-part "gen/travel/impressions/countries.dart";
-
-
-part "gen/travel/impressions/web_links.dart";
-
-
-part "gen/travel/impressions/followings.dart";
-
-    
+  /* 
+  import "dart:flutter";
+  import "dart:math";
   
+
+  import "package:ednet_core/ednet_core.dart";
+  import "package:ednet_core_default_app/ednet_core_default_app.dart";
+  import "package:travel_impressions/travel_impressions.dart";
+  */
+

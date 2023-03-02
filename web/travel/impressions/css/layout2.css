@@ -7,20 +7,21 @@
   Author:                  Dzenan Ridjanovic
   Influenced By:           http://www.simplebits.com/
   Created:                 2006-09-03
-  Updated:                 2013-06-18
+  Updated:                 2011-12-09
 */
 
 /* ===[ 2 columns layout ]=== */
 
   #main {
     float: left;
-    width: 66%;
+    width: 60%;
     background: #fffff0;
   }
 
   #side {
     float: right;
-    width: 32%;
+    width: 36%;
   }
 
 /* ===[ end ]=== */
+  

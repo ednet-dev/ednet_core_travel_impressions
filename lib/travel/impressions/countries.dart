@@ -6,14 +6,19 @@ class Country extends CountryGen {
  
   Country(Concept concept) : super(concept); 
  
-  Country.withId(Concept concept, String name) : 
-    super.withId(concept, name); 
+  // added after code gen - begin 
+ 
+  // added after code gen - end 
  
 } 
  
 class Countries extends CountriesGen { 
  
   Countries(Concept concept) : super(concept); 
+ 
+  // added after code gen - begin 
+ 
+  // added after code gen - end 
  
 } 
  

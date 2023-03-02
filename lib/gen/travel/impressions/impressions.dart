@@ -4,38 +4,38 @@ part of travel_impressions;
  
 abstract class ImpressionGen extends Entity<Impression> { 
  
-  ImpressionGen(Concept concept) {
-    this.concept = concept;
-  }
- 
-  ImpressionGen.withId(Concept concept, Place place, Message message) { 
-    this.concept = concept;
-    setParent("place", place); 
-    setParent("message", message); 
+  ImpressionGen(Concept concept) { 
+    this.concept = concept; 
   } 
  
-  Place get place => getParent("place"); 
-  set place(Place p) => setParent("place", p); 
+  Reference get placeReference => getReference("place") as Reference; 
+  void set placeReference(Reference reference) { setReference("place", reference); } 
   
-  Message get message => getParent("message"); 
-  set message(Message p) => setParent("message", p); 
+  Place get place => getParent("place") as Place; 
+  void set place(Place p) { setParent("place", p); } 
+  
+  Reference get messageReference => getReference("message") as Reference; 
+  void set messageReference(Reference reference) { setReference("message", reference); } 
+  
+  Message get message => getParent("message") as Message; 
+  void set message(Message p) { setParent("message", p); } 
   
   String get text => getAttribute("text"); 
-  set text(String a) => setAttribute("text", a); 
+  void set text(String a) { setAttribute("text", a); } 
   
-  Impression newEntity() => new Impression(concept); 
-  Impressions newEntities() => new Impressions(concept); 
+  Impression newEntity() => Impression(concept); 
+  Impressions newEntities() => Impressions(concept); 
   
 } 
  
 abstract class ImpressionsGen extends Entities<Impression> { 
  
-  ImpressionsGen(Concept concept) {
-    this.concept = concept;
-  }
+  ImpressionsGen(Concept concept) { 
+    this.concept = concept; 
+  } 
  
-  Impressions newEntities() => new Impressions(concept); 
-  Impression newEntity() => new Impression(concept); 
+  Impressions newEntities() => Impressions(concept); 
+  Impression newEntity() => Impression(concept); 
   
 } 
  

@@ -6,14 +6,19 @@ class Message extends MessageGen {
  
   Message(Concept concept) : super(concept); 
  
-  Message.withId(Concept concept, Traveler traveler, DateTime date) : 
-    super.withId(concept, traveler, date); 
+  // added after code gen - begin 
+ 
+  // added after code gen - end 
  
 } 
  
 class Messages extends MessagesGen { 
  
   Messages(Concept concept) : super(concept); 
+ 
+  // added after code gen - begin 
+ 
+  // added after code gen - end 
  
 } 
  

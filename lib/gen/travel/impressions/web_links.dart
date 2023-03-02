@@ -4,44 +4,38 @@ part of travel_impressions;
  
 abstract class WebLinkGen extends Entity<WebLink> { 
  
-  WebLinkGen(Concept concept) {
-    this.concept = concept;
-  }
- 
-  WebLinkGen.withId(Concept concept, Uri url) { 
-    this.concept = concept;
-    setAttribute("url", url); 
+  WebLinkGen(Concept concept) { 
+    this.concept = concept; 
   } 
  
-  Place get place => getParent("place"); 
-  set place(Place p) => setParent("place", p); 
+  Reference get placeReference => getReference("place") as Reference; 
+  void set placeReference(Reference reference) { setReference("place", reference); } 
+  
+  Place get place => getParent("place") as Place; 
+  void set place(Place p) { setParent("place", p); } 
   
   Uri get url => getAttribute("url"); 
-  set url(Uri a) => setAttribute("url", a); 
+  void set url(Uri a) { setAttribute("url", a); } 
   
   String get title => getAttribute("title"); 
-  set title(String a) => setAttribute("title", a); 
+  void set title(String a) { setAttribute("title", a); } 
   
   String get description => getAttribute("description"); 
-  set description(String a) => setAttribute("description", a); 
+  void set description(String a) { setAttribute("description", a); } 
   
-  WebLink newEntity() => new WebLink(concept); 
-  WebLinks newEntities() => new WebLinks(concept); 
+  WebLink newEntity() => WebLink(concept); 
+  WebLinks newEntities() => WebLinks(concept); 
   
-  int urlCompareTo(WebLink other) { 
-    return url.toString().compareTo(other.url.toString()); 
-  } 
- 
 } 
  
 abstract class WebLinksGen extends Entities<WebLink> { 
  
-  WebLinksGen(Concept concept) {
-    this.concept = concept;
-  }
+  WebLinksGen(Concept concept) { 
+    this.concept = concept; 
+  } 
  
-  WebLinks newEntities() => new WebLinks(concept); 
-  WebLink newEntity() => new WebLink(concept); 
+  WebLinks newEntities() => WebLinks(concept); 
+  WebLink newEntity() => WebLink(concept); 
   
 } 
  

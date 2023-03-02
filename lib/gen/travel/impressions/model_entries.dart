@@ -1,83 +1,81 @@
 part of travel_impressions; 
  
-// lib/gen/travel/impressions/model_entries.dart
+// lib/gen/travel/impressions/model_entries.dart 
  
 class ImpressionsEntries extends ModelEntries { 
  
   ImpressionsEntries(Model model) : super(model); 
  
   Map<String, Entities> newEntries() { 
-    var entries = new Map<String, Entities>(); 
+    var entries = Map<String, Entities>(); 
     var concept; 
     concept = model.concepts.singleWhereCode("Traveler"); 
-    entries["Traveler"] = new Travelers(concept); 
+    entries["Traveler"] = Travelers(concept); 
     concept = model.concepts.singleWhereCode("Country"); 
-    entries["Country"] = new Countries(concept); 
+    entries["Country"] = Countries(concept); 
     return entries; 
   } 
  
   Entities? newEntities(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
-      throw new ConceptError("${conceptCode} concept does not exist.") ; 
+      throw ConceptError("${conceptCode} concept does not exist.") ; 
     } 
     if (concept.code == "Traveler") { 
-      return new Travelers(concept); 
+      return Travelers(concept); 
     } 
     if (concept.code == "Place") { 
-      return new Places(concept); 
+      return Places(concept); 
     } 
     if (concept.code == "Impression") { 
-      return new Impressions(concept); 
+      return Impressions(concept); 
     } 
     if (concept.code == "Message") { 
-      return new Messages(concept); 
+      return Messages(concept); 
     } 
     if (concept.code == "Country") { 
-      return new Countries(concept); 
+      return Countries(concept); 
     } 
     if (concept.code == "WebLink") { 
-      return new WebLinks(concept); 
+      return WebLinks(concept); 
     } 
     if (concept.code == "Following") { 
-      return new Followings(concept); 
+      return Followings(concept); 
     } 
+    return null; 
   } 
  
   Entity? newEntity(String conceptCode) { 
     var concept = model.concepts.singleWhereCode(conceptCode); 
     if (concept == null) { 
-      throw new ConceptError("${conceptCode} concept does not exist.") ; 
+      throw ConceptError("${conceptCode} concept does not exist.") ; 
     } 
     if (concept.code == "Traveler") { 
-      return new Traveler(concept); 
+      return Traveler(concept); 
     } 
     if (concept.code == "Place") { 
-      return new Place(concept); 
+      return Place(concept); 
     } 
     if (concept.code == "Impression") { 
-      return new Impression(concept); 
+      return Impression(concept); 
     } 
     if (concept.code == "Message") { 
-      return new Message(concept); 
+      return Message(concept); 
     } 
     if (concept.code == "Country") { 
-      return new Country(concept); 
+      return Country(concept); 
     } 
     if (concept.code == "WebLink") { 
-      return new WebLink(concept); 
+      return WebLink(concept); 
     } 
     if (concept.code == "Following") { 
-      return new Following(concept); 
+      return Following(concept); 
     } 
+    return null; 
   } 
  
-  fromJsonToData() { 
-    fromJson(travelImpressionsDataJson); 
-  } 
- 
-  Travelers get travelers => getEntry("Traveler"); 
-  Countries get countries => getEntry("Country"); 
+  Travelers get travelers => getEntry("Traveler") as Travelers; 
+  Countries get countries => getEntry("Country") as Countries; 
  
 } 
  
