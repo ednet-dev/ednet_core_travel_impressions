@@ -12,7 +12,7 @@ abstract class TravelerGen extends Entity<Traveler> {
     Concept? followingConcept = concept.model.concepts.singleWhereCode("Following"); 
     assert(followingConcept!= null); 
     setChild("followedBy", Followings(followingConcept!)); 
-    setChild("follows", Followings(followingConcept!)); 
+    setChild("follows", Followings(followingConcept));
   } 
  
   String get email => getAttribute("email"); 

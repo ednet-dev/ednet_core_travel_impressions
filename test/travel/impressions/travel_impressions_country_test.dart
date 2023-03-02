@@ -265,7 +265,7 @@ void testTravelImpressionsCountries(
     test("country session undo and redo", () { 
       var countryCount = countries.length; 
       var country = Country(countries.concept); 
-        country.name = 'effort'; 
+        country.name = 'effortless';
       countries.add(country); 
       expect(countries.length, equals(++countryCount)); 
       countries.remove(country); 
