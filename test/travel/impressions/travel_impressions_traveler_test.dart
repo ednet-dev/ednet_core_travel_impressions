@@ -163,11 +163,11 @@ void testTravelImpressionsTravelers(
       var travelersCount = travelers.length; 
  
       var traveler = Traveler(travelers.concept); 
-      traveler.email = 'brave'; 
-      traveler.password = 'service'; 
-      traveler.firstName = 'life'; 
-      traveler.lastName = 'dvd'; 
-      traveler.description = 'software'; 
+      traveler.email = 'account'; 
+      traveler.password = 'water'; 
+      traveler.firstName = 'sailing'; 
+      traveler.lastName = 'sand'; 
+      traveler.description = 'up'; 
       var added = selectedTravelers.add(traveler); 
       expect(added, isTrue); 
       expect(travelers.length, equals(++travelersCount)); 
@@ -243,7 +243,7 @@ void testTravelImpressionsTravelers(
       var randomTraveler = travelers.random(); 
       var beforeUpdate = randomTraveler.email; 
       try { 
-        randomTraveler.email = 'computer'; 
+        randomTraveler.email = 'house'; 
       } on UpdateException catch (e) { 
         expect(randomTraveler.email, equals(beforeUpdate)); 
       } 
@@ -252,7 +252,7 @@ void testTravelImpressionsTravelers(
     test("Update traveler id without try", () { 
       var randomTraveler = travelers.random(); 
       var beforeUpdateValue = randomTraveler.email; 
-      expect(() => randomTraveler.email = 'tax', throws); 
+      expect(() => randomTraveler.email = 'pencil', throws); 
       expect(randomTraveler.email, equals(beforeUpdateValue)); 
     }); 
  
@@ -262,15 +262,15 @@ void testTravelImpressionsTravelers(
       var attribute = randomTraveler.concept.attributes.singleWhereCode("email"); 
       expect(attribute?.update, isFalse); 
       attribute?.update = true; 
-      afterUpdateEntity.email = 'tree'; 
-      expect(afterUpdateEntity.email, equals('tree')); 
+      afterUpdateEntity.email = 'point'; 
+      expect(afterUpdateEntity.email, equals('point')); 
       attribute?.update = false; 
       var updated = travelers.update(randomTraveler, afterUpdateEntity); 
       expect(updated, isTrue); 
  
-      var entity = travelers.singleWhereAttributeId("email", 'tree'); 
+      var entity = travelers.singleWhereAttributeId("email", 'point'); 
       expect(entity, isNotNull); 
-      expect(entity!.email, equals('tree')); 
+      expect(entity!.email, equals('point')); 
  
       //travelers.display("After update traveler id"); 
     }); 
@@ -278,8 +278,8 @@ void testTravelImpressionsTravelers(
     test("Update traveler non id attribute with failure", () { 
       var randomTraveler = travelers.random(); 
       var afterUpdateEntity = randomTraveler.copy(); 
-      afterUpdateEntity.password = 'policeman'; 
-      expect(afterUpdateEntity.password, equals('policeman')); 
+      afterUpdateEntity.password = 'life'; 
+      expect(afterUpdateEntity.password, equals('life')); 
       // travelers.update can only be used if oid, code or id is set. 
       expect(() => travelers.update(randomTraveler, afterUpdateEntity), throws); 
     }); 
@@ -318,11 +318,11 @@ void testTravelImpressionsTravelers(
     test("traveler action undo and redo", () { 
       var travelerCount = travelers.length; 
       var traveler = Traveler(travelers.concept); 
-        traveler.email = 'college'; 
-      traveler.password = 'element'; 
-      traveler.firstName = 'hot'; 
-      traveler.lastName = 'hot'; 
-      traveler.description = 'deep'; 
+        traveler.email = 'future'; 
+      traveler.password = 'dinner'; 
+      traveler.firstName = 'drink'; 
+      traveler.lastName = 'theme'; 
+      traveler.description = 'cardboard'; 
       travelers.add(traveler); 
       expect(travelers.length, equals(++travelerCount)); 
       travelers.remove(traveler); 
@@ -342,11 +342,11 @@ void testTravelImpressionsTravelers(
     test("traveler session undo and redo", () { 
       var travelerCount = travelers.length; 
       var traveler = Traveler(travelers.concept); 
-        traveler.email = 'do'; 
-      traveler.password = 'sentence'; 
-      traveler.firstName = 'message'; 
-      traveler.lastName = 'enquiry'; 
-      traveler.description = 'tag'; 
+        traveler.email = 'highway'; 
+      traveler.password = 'room'; 
+      traveler.firstName = 'office'; 
+      traveler.lastName = 'ball'; 
+      traveler.description = 'brad'; 
       travelers.add(traveler); 
       expect(travelers.length, equals(++travelerCount)); 
       travelers.remove(traveler); 
@@ -365,7 +365,7 @@ void testTravelImpressionsTravelers(
  
     test("Traveler update undo and redo", () { 
       var traveler = travelers.random(); 
-      var action = SetAttributeCommand(session, traveler, "password", 'pencil'); 
+      var action = SetAttributeCommand(session, traveler, "password", 'train'); 
       action.doIt(); 
  
       session.past.undo(); 
@@ -466,11 +466,11 @@ void testTravelImpressionsTravelers(
  
       travelDomain.startCommandReaction(reaction); 
       var traveler = Traveler(travelers.concept); 
-        traveler.email = 'secretary'; 
-      traveler.password = 'cloud'; 
-      traveler.firstName = 'teacher'; 
-      traveler.lastName = 'office'; 
-      traveler.description = 'vessel'; 
+        traveler.email = 'cup'; 
+      traveler.password = 'mile'; 
+      traveler.firstName = 'architecture'; 
+      traveler.lastName = 'cream'; 
+      traveler.description = 'cinema'; 
       travelers.add(traveler); 
       expect(travelers.length, equals(++travelerCount)); 
       travelers.remove(traveler); 
@@ -483,7 +483,7 @@ void testTravelImpressionsTravelers(
       expect(reaction.reactedOnAdd, isTrue); 
  
       var setAttributeCommand = SetAttributeCommand( 
-        session, traveler, "password", 'video'); 
+        session, traveler, "password", 'cloud'); 
       setAttributeCommand.doIt(); 
       expect(reaction.reactedOnUpdate, isTrue); 
       travelDomain.cancelCommandReaction(reaction); 

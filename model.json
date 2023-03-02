@@ -116,7 +116,7 @@
                     "init":"",
                     "essential":true,
                     "sensitive":false,
-                    "category":"required",
+                    "category":"identifier",
                     "type":"String"
                 },
                 {
@@ -227,7 +227,7 @@
                     "init":"now",
                     "essential":true,
                     "sensitive":false,
-                    "category":"attribute",
+                    "category":"identifier",
                     "type":"DateTime"
                 },
                 {
