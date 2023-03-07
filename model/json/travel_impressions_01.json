@@ -1,37 +1,37 @@
 {
     "width":990,
-    "lines":[
+    "relations":[
         {
-            "box2box1Max":"1",
-            "box1Name":"Traveler",
-            "box1box2Min":"0",
-            "box2Name":"Impression",
-            "box1box2Id":false,
-            "box2box1Id":false,
-            "box2box1Name":"traveler",
-            "box1box2Max":"N",
-            "box1box2Name":"impressions",
-            "box2box1Min":"1",
+            "toFromMax":"1",
+            "from":"Traveler",
+            "fromToMin":"0",
+            "to":"Impression",
+            "fromToId":false,
+            "toFromId":false,
+            "toFromName":"traveler",
+            "fromToMax":"N",
+            "fromToName":"impressions",
+            "toFromMin":"1",
             "category":"relationship",
             "internal":true
         },
         {
-            "box2box1Max":"1",
-            "box1Name":"Place",
-            "box1box2Min":"0",
-            "box2Name":"Impression",
-            "box1box2Id":false,
-            "box2box1Id":false,
-            "box2box1Name":"traveler",
-            "box1box2Max":"N",
-            "box1box2Name":"impressions",
-            "box2box1Min":"1",
+            "toFromMax":"1",
+            "from":"Place",
+            "fromToMin":"0",
+            "to":"Impression",
+            "fromToId":false,
+            "toFromId":false,
+            "toFromName":"traveler",
+            "fromToMax":"N",
+            "fromToName":"impressions",
+            "toFromMin":"1",
             "category":"relationship",
             "internal":false
         }
     ],
     "height":580,
-    "boxes":[
+    "concepts":[
         {
             "width":80,
             "entry":true,
@@ -39,7 +39,7 @@
             "x":35,
             "height":80,
             "y":20,
-            "items":[
+            "attributes":[
                 {
                     "sequence":10,
                     "name":"firstName",
@@ -63,7 +63,7 @@
             "x":400,
             "height":80,
             "y":97,
-            "items":[
+            "attributes":[
                 {
                     "sequence":10,
                     "name":"text",
@@ -80,7 +80,7 @@
             "x":34,
             "height":80,
             "y":178,
-            "items":[
+            "attributes":[
                 {
                     "sequence":10,
                     "name":"name",

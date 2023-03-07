@@ -1,79 +1,79 @@
 {
     "width":990,
-    "lines":[
+    "relations":[
         {
-            "box2box1Max":"1",
-            "box1Name":"Place",
-            "box1box2Min":"0",
-            "box2Name":"Impression",
-            "box1box2Id":false,
-            "box2box1Id":true,
-            "box2box1Name":"place",
-            "box1box2Max":"N",
-            "box1box2Name":"impressions",
-            "box2box1Min":"1",
+            "toFromMax":"1",
+            "from":"Place",
+            "fromToMin":"0",
+            "to":"Impression",
+            "fromToId":false,
+            "toFromId":true,
+            "toFromName":"place",
+            "fromToMax":"N",
+            "fromToName":"impressions",
+            "toFromMin":"1",
             "category":"relationship",
             "internal":false
         },
         {
-            "box2box1Max":"1",
-            "box1Name":"Traveler",
-            "box1box2Min":"0",
-            "box2Name":"Message",
-            "box1box2Id":false,
-            "box2box1Id":true,
-            "box2box1Name":"traveler",
-            "box1box2Max":"N",
-            "box1box2Name":"messages",
-            "box2box1Min":"1",
+            "toFromMax":"1",
+            "from":"Traveler",
+            "fromToMin":"0",
+            "to":"Message",
+            "fromToId":false,
+            "toFromId":true,
+            "toFromName":"traveler",
+            "fromToMax":"N",
+            "fromToName":"messages",
+            "toFromMin":"1",
             "category":"relationship",
             "internal":true
         },
         {
-            "box2box1Max":"1",
-            "box1Name":"Message",
-            "box1box2Min":"0",
-            "box2Name":"Impression",
-            "box1box2Id":false,
-            "box2box1Id":true,
-            "box2box1Name":"message",
-            "box1box2Max":"N",
-            "box1box2Name":"impressions",
-            "box2box1Min":"1",
+            "toFromMax":"1",
+            "from":"Message",
+            "fromToMin":"0",
+            "to":"Impression",
+            "fromToId":false,
+            "toFromId":true,
+            "toFromName":"message",
+            "fromToMax":"N",
+            "fromToName":"impressions",
+            "toFromMin":"1",
             "category":"relationship",
             "internal":true
         },
         {
-            "box2box1Max":"1",
-            "box1Name":"Country",
-            "box1box2Min":"0",
-            "box2Name":"Place",
-            "box1box2Id":false,
-            "box2box1Id":true,
-            "box2box1Name":"country",
-            "box1box2Max":"N",
-            "box1box2Name":"places",
-            "box2box1Min":"1",
+            "toFromMax":"1",
+            "from":"Country",
+            "fromToMin":"0",
+            "to":"Place",
+            "fromToId":false,
+            "toFromId":true,
+            "toFromName":"country",
+            "fromToMax":"N",
+            "fromToName":"places",
+            "toFromMin":"1",
             "category":"relationship",
             "internal":true
         },
         {
-            "box2box1Max":"1",
-            "box1Name":"Place",
-            "box1box2Min":"0",
-            "box2Name":"WebLink",
-            "box1box2Id":false,
-            "box2box1Id":false,
-            "box2box1Name":"place",
-            "box1box2Max":"N",
-            "box1box2Name":"webLinks",
-            "box2box1Min":"1",
+            "toFromMax":"1",
+            "from":"Place",
+            "fromToMin":"0",
+            "to":"WebLink",
+            "fromToId":false,
+            "toFromId":false,
+            "toFromName":"place",
+            "fromToMax":"N",
+            "fromToName":"webLinks",
+            "toFromMin":"1",
             "category":"relationship",
             "internal":true
         }
     ],
     "height":580,
-    "boxes":[
+    "concepts":[
         {
             "width":80,
             "entry":true,
@@ -81,7 +81,7 @@
             "x":35,
             "height":120,
             "y":18,
-            "items":[
+            "attributes":[
                 {
                     "sequence":60,
                     "name":"email",
@@ -126,7 +126,7 @@
             "x":33,
             "height":80,
             "y":157,
-            "items":[
+            "attributes":[
                 {
                     "sequence":10,
                     "name":"name",
@@ -157,7 +157,7 @@
             "x":314,
             "height":60,
             "y":266,
-            "items":[
+            "attributes":[
                 {
                     "sequence":20,
                     "name":"text",
@@ -174,7 +174,7 @@
             "x":386,
             "height":80,
             "y":13,
-            "items":[
+            "attributes":[
                 {
                     "sequence":10,
                     "name":"date",
@@ -205,7 +205,7 @@
             "x":299,
             "height":60,
             "y":98,
-            "items":[
+            "attributes":[
                 {
                     "sequence":20,
                     "name":"name",
@@ -222,7 +222,7 @@
             "x":199,
             "height":80,
             "y":353,
-            "items":[
+            "attributes":[
                 {
                     "sequence":10,
                     "name":"url",
